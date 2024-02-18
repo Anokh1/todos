@@ -8,8 +8,9 @@ import { InputTextarea } from "primereact/inputtextarea";
 import todoCard from './components/todoCard';
 import { OverlayPanel } from 'primereact/overlaypanel';
 import { AboutPage } from './pages/aboutPage';
-import { Route, Routes } from 'react-router-dom';
-import Navigation from './components/navigation';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// import Navigation from './components/navigation';
+import Navbar from './components/navBar';
 
 
 import 'primereact/resources/themes/saga-blue/theme.css';
@@ -83,11 +84,15 @@ function App() {
 
 
   return (
+    
     <div className="App">
       <div>
-        <Routes>
-          <Route path="/about" component={AboutPage} />s
-        </Routes>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/about" element={AboutPage} />s
+          </Routes>
+        </Router>
       </div>
       <header className="App-header">
         <h1>T O D O</h1>
